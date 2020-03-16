@@ -7,21 +7,21 @@
     require_once "../app/class/classTurma.php";
     
 
-    $ClassAluno = new ClassAluno();
+    $ClassAluno = new ClassAluno();             // instanciando uma classe ClassAluno  
     $ClassAluno->setId(1);
 
-    $ClassCurso = new ClassCurso();
+    $ClassCurso = new ClassCurso();             // instanciando uma classe ClassCurso
     $ClassCurso->setId(3);
 
-    $ClassDisciplina = new ClassDisciplina();
+    $ClassDisciplina = new ClassDisciplina();   // instanciando uma classe ClassDisciplina
     $ClassDisciplina->setId(2);
 
 
-    $ClassTurma = new ClassTurma();
+    $ClassTurma = new ClassTurma();             // instanciando uma classe ClassTurma
     $ClassTurma->setSigla('CD');
     $ClassTurma->setTurno('matutino');
 
-    $turma = new TurmaDao();
+    $turma = new TurmaDao();                    // instanciando uma classe TurmaDao
     $turma->insertTurma($ClassTurma,$ClassAluno,$ClassCurso,$ClassDisciplina);
 
 ?>

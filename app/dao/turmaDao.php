@@ -6,8 +6,8 @@ require_once "../app/class/classAluno.php";
 require_once "../app/class/classCurso.php";
 require_once "../app/class/classDisciplina.php";
 
-    Class TurmaDao extends Dao{
-
+    Class TurmaDao extends Dao{// a classe TurmaDao se extendendo da classe pai DAO
+        // inserindo dados da Turma
         public function insertTurma($ClassTurma,$ClassAluno,$ClassCurso,$ClassDisciplina){
 
             $sql = "INSERT INTO `turma`(`turma_sigla`, `turma_turno`, `turma_aluno_id`, `turma_curso_id`, `turma_disciplina_id`)
@@ -20,12 +20,13 @@ require_once "../app/class/classDisciplina.php";
             $insert->bindValue(':cursoID',$ClassCurso->getId());
             $insert->bindValue(':disciplinaID',$ClassDisciplina->getId());
             $insert->execute();
-
+            
+            echo "A turma <b>{$ClassTurma->getSigla()}</b> com Turno <b>{$ClassTurma->getTurno()}</b> foi cadastrado com sucesso";
 
         }
+        // fazendo um select de todas as disciplinas
         public function listaTurna(){
-
-
+            // logica do select
             $sql = "SELECT * FROM `turma`";
             $select = $this->con->prepare($sql);
             $select->execute();
@@ -42,8 +43,9 @@ require_once "../app/class/classDisciplina.php";
                 echo "<br>";
             }
 
-
         }
+
+        
 
 
     }
