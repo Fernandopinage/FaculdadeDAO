@@ -13,10 +13,9 @@ class AlunoDao extends Dao { // a classe AlunoDao se extendendo da classe pai DA
         $insert->bindValue(":nome", $ClassAluno->getNome());
         $insert->bindValue(":matricula", $ClassAluno->getMatricula());
         $insert->execute();
-        if ($insert->rowCount()> 0)
-           return true;
-
-        //echo "O aluno <b>{$ClassAluno->getNome()}</b> com sua matricula <b>{$ClassAluno->getMatricula()}</b> foi cadastrado com sucesso";
+        if ($insert->rowCount()> 0){
+             return true;
+        }
     }
 
     // fazendo um select de todos os alunos
@@ -68,9 +67,6 @@ class AlunoDao extends Dao { // a classe AlunoDao se extendendo da classe pai DA
     // função para atualizar o registro do aluno
     public function updateAluno(ClassAluno $ClassAluno) {
       
-        //var_dump($ClassAluno);        exit();
-        // echo "O <b>ID: </b>" . $id . " do aluno que foi atualizado";
-
         $sql = "UPDATE `aluno` SET `aluno_nome`=:nome,`aluno_matricula`=:matricula WHERE aluno_id = :id";
         $update = $this->con->prepare($sql);
         

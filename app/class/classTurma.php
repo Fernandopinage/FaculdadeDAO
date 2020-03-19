@@ -7,7 +7,32 @@
         private $id;
         private $sigla;
         private $turno;
+        function getCurso() {
+            return $this->curso;
+        }
 
+        function getDisciplina() {
+            return $this->disciplina;
+        }
+
+        function getAluno() {
+            return $this->aluno;
+        }
+
+        function setCurso($curso) {
+            $this->curso = $curso;
+        }
+
+        function setDisciplina($disciplina) {
+            $this->disciplina = $disciplina;
+        }
+
+        function setAluno($aluno) {
+            $this->aluno = $aluno;
+        }
+
+                
+        
         public function setId($id){
             $this->id = $id;
         }

@@ -9,7 +9,9 @@ $lista = $aluno->listaAluno();
 if(isset($_GET['acao'])){
     $id = filter_input(INPUT_GET, 'id');    
     $aluno->deleteAluno($id);
-    header('Location: alunoLista.php');
+    echo "<script>alert('ALUNO DELETADO COM SUCESSO!');window.location = 'alunoLista.php';</script>";
+    //header('Location: alunoLista.php');
+    
 };
 ?>
 <!DOCTYPE html>

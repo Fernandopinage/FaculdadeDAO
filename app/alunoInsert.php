@@ -20,22 +20,11 @@ if (isset($_POST['nome'])) {
 <html>
     <head>
         <!--Import Google Icon Font-->
-        <link type="text/css" rel="stylesheet" href="fonts/icon.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="fonts/icon.css">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            body {
-                display: flex;
-                min-height: 100vh;
-                flex-direction: column;
-            }
-
-            .main {
-                flex: 1 0 auto;
-            }
-        </style>
     </head>
     <body>
         <?php include_once './cabecalho.php'; ?>
@@ -53,7 +42,7 @@ if (isset($_POST['nome'])) {
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">phone</i>
-                                <input id="matricula" type="tel" class="validate" name="matricula" required="" >
+                                <input id="matricula" type="text" class="validate" name="matricula" required="" size="4" maxlength="4">
                                 <label for="matricula">Matricula</label>
                             </div>
                         </div>
@@ -62,7 +51,7 @@ if (isset($_POST['nome'])) {
                                 <button type="submit" class="waves-effect waves-light btn">Cadastrar</button>
                             </div>
                             <div class="input-field col s2">
-                                <a class="waves-effect red btn">Cancelar</a>
+                                <a class="waves-effect red btn" href="alunoLista.php">Cancelar</a>
                             </div>
                         </div>
                     </fieldset>

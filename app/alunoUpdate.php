@@ -51,17 +51,17 @@ if (isset($_GET['alterar'])) {
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">phone</i>
-                                <input id="matricula" type="tel" class="validate" name="matricula" value="<?php echo $aluno->getMatricula();?>">
+                                <input id="matricula" type="text" class="validate" name="matricula" size="4" maxlength="4" value="<?php echo $aluno->getMatricula();?>">
                                 <label for="matricula">Matricula</label>
                             </div>
                         </div>
-                        <input type="hidden"id="id" name="id" value="<?php echo $aluno->getId();?>">
+                        <input type="hidden" id="id" name="id" value="<?php echo $aluno->getId();?>">
                         <div class="row">
                             <div class="input-field col s2">
                                 <button type="submit" class="waves-effect waves-light btn">Alterar</button>
                             </div>
                             <div class="input-field col s2">
-                                <a class="waves-effect red btn">Cancelar</a>
+                                <a class="waves-effect red btn" href="alunoLista.php">Cancelar</a>
                             </div>
                         </div>
                     </fieldset>
